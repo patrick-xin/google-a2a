@@ -1,17 +1,46 @@
-import './global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
-import { Inter } from 'next/font/google';
-import type { ReactNode } from 'react';
+import "./global.css";
 
-const inter = Inter({
-  subsets: ['latin'],
+import type { ReactNode } from "react";
+import { Provider } from "./provider";
+import { Geist, Geist_Mono } from "next/font/google";
+import { baseUrl, createMetadata } from "@/lib/metadata";
+import { Viewport } from "next";
+
+export const metadata = createMetadata({
+  title: {
+    template: "%s | Fumadocs",
+    default: "Fumadocs",
+  },
+  description: "The Next.js framework for building documentation sites",
+  metadataBase: baseUrl,
 });
+
+const geist = Geist({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const mono = Geist_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+    { media: "(prefers-color-scheme: light)", color: "#fff" },
+  ],
+};
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${geist.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
