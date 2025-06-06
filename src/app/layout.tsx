@@ -5,7 +5,7 @@ import { Provider } from "./provider";
 import { Geist, Geist_Mono } from "next/font/google";
 import { baseUrl, createMetadata } from "@/lib/metadata";
 import { Viewport } from "next";
-
+import { Toaster } from "@/components/ui/sonner";
 export const metadata = createMetadata({
   title: {
     template: "%s | Fumadocs",
@@ -40,7 +40,10 @@ export default function Layout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen">
-        <Provider>{children}</Provider>
+        <Provider>
+          {children}
+          <Toaster richColors />
+        </Provider>
       </body>
     </html>
   );
