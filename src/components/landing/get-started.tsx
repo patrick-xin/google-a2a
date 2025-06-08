@@ -155,7 +155,7 @@ const A2AGetStartedSection = () => {
                 {/* Badge */}
                 <div className="absolute top-4 right-4">
                   <span
-                    className={`px-2 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${resource.gradient} text-white`}
+                    className={`px-2 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${resource.gradient}`}
                   >
                     {resource.badge}
                   </span>
@@ -166,7 +166,7 @@ const A2AGetStartedSection = () => {
                   <div
                     className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${resource.gradient} mb-6 shadow-lg`}
                   >
-                    <resource.icon className="w-8 h-8 text-white" />
+                    <resource.icon className="w-8 h-8" />
                   </div>
 
                   {/* Content */}
@@ -242,7 +242,7 @@ const A2AGetStartedSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 justify-center"
+                  className="group bg-gradient-to-r from-primary to-accent px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 justify-center"
                 >
                   <Sparkles className="w-5 h-5" />
                   Start Building with A2A

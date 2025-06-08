@@ -228,7 +228,7 @@ console.log('Agent response:', result);`;
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-3">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto">
-                <Globe className="w-6 h-6 text-white" />
+                <Globe className="w-6 h-6" />
               </div>
               <h4 className="text-lg font-semibold">Standard Protocols</h4>
               <p className="text-sm text-muted-foreground">
@@ -239,7 +239,7 @@ console.log('Agent response:', result);`;
 
             <div className="space-y-3">
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto">
-                <Shield className="w-6 h-6 text-white" />
+                <Shield className="w-6 h-6" />
               </div>
               <h4 className="text-lg font-semibold">Enterprise Ready</h4>
               <p className="text-sm text-muted-foreground">
@@ -250,7 +250,7 @@ console.log('Agent response:', result);`;
 
             <div className="space-y-3">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto">
-                <Zap className="w-6 h-6 text-white" />
+                <Zap className="w-6 h-6" />
               </div>
               <h4 className="text-lg font-semibold">High Performance</h4>
               <p className="text-sm text-muted-foreground">

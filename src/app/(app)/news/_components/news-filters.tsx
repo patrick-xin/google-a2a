@@ -9,6 +9,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Loader2 } from "lucide-react";
+import { Label } from "@/components/ui/label";
 
 interface NewsFiltersProps {
   availableDomains: string[];
@@ -50,12 +52,12 @@ export function NewsFilters({ availableDomains }: NewsFiltersProps) {
     <div className="rounded-lg p-4 mb-6 border bg-card">
       <div className="flex flex-wrap gap-4 items-center">
         <div className="flex items-center gap-2">
-          <label
+          <Label
             className="text-sm font-medium"
             htmlFor="sort-select" // ✅ Better accessibility
           >
             Sort by:
-          </label>
+          </Label>
           <Select
             value={currentSort}
             onValueChange={(value) => updateFilter("sort", value)}
@@ -77,12 +79,12 @@ export function NewsFilters({ availableDomains }: NewsFiltersProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <label
+          <Label
             className="text-sm font-medium"
             htmlFor="domain-select" // ✅ Better accessibility
           >
             Source:
-          </label>
+          </Label>
           <Select
             value={currentDomain}
             onValueChange={(value) => updateFilter("domain", value)}
@@ -109,8 +111,7 @@ export function NewsFilters({ availableDomains }: NewsFiltersProps) {
         {/* ✅ Add loading indicator */}
         {isPending && (
           <div className="text-sm text-muted-foreground flex items-center gap-2">
-            <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-            Updating...
+            <Loader2 className="w-4 h-4 animate-spin" />
           </div>
         )}
       </div>

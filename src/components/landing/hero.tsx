@@ -66,11 +66,9 @@ const A2AHeroSection = () => {
 
   return (
     <motion.section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20"
+      className="relative bg-primary/10 min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20"
       style={{ y: heroY }}
     >
-      {/* Simplified background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3" />
       <FloatingParticles />
 
       <div className="container mx-auto px-4 z-10">

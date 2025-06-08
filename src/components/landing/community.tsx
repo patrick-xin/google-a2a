@@ -197,7 +197,7 @@ const A2ACommunitySection = () => {
                     <div
                       className={`p-3 rounded-xl bg-gradient-to-br ${testimonial.gradient} flex-shrink-0`}
                     >
-                      <Quote className="w-6 h-6 text-white" />
+                      <Quote className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
                       <p className="text-muted-foreground leading-relaxed italic text-lg">
@@ -287,7 +287,7 @@ const A2ACommunitySection = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 mx-auto"
+              className="group bg-gradient-to-r from-primary to-accent px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 mx-auto"
             >
               <Users className="w-5 h-5" />
               Join the Community

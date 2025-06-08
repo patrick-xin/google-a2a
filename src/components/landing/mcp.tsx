@@ -120,7 +120,7 @@ const A2AMCPSection = () => {
                 {/* Icon and header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-6 shadow-lg">
-                    <Code className="w-8 h-8 text-white" />
+                    <Code className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">
                     Model Context Protocol
@@ -176,7 +176,7 @@ const A2AMCPSection = () => {
                 {/* Icon and header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 mb-6 shadow-lg">
-                    <Network className="w-8 h-8 text-white" />
+                    <Network className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">
                     Agent2Agent Protocol
@@ -231,7 +231,7 @@ const A2AMCPSection = () => {
 
             <div className="relative">
               <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-primary to-accent mb-6">
-                <Layers className="w-8 h-8 text-white" />
+                <Layers className="w-8 h-8" />
               </div>
 
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
@@ -249,14 +249,14 @@ const A2AMCPSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-6 py-3 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors duration-200"
+                  className="px-6 py-3 bg-blue-500 rounded-lg font-medium hover:bg-blue-600 transition-colors duration-200"
                 >
                   Learn about MCP
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-6 py-3 bg-purple-500 text-white rounded-lg font-medium hover:bg-purple-600 transition-colors duration-200"
+                  className="px-6 py-3 bg-purple-500 rounded-lg font-medium hover:bg-purple-600 transition-colors duration-200"
                 >
                   Explore A2A Docs
                 </motion.button>

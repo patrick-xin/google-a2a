@@ -129,7 +129,7 @@ const A2ABenefitsSection = () => {
                   <div
                     className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${benefit.gradient} mb-6 shadow-lg`}
                   >
-                    <benefit.icon className="w-6 h-6 text-white" />
+                    <benefit.icon className="w-6 h-6" />
                   </div>
 
                   {/* Title */}
@@ -172,7 +172,7 @@ const A2ABenefitsSection = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 mx-auto"
+              className="group bg-gradient-to-r from-primary to-accent px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-3 mx-auto"
             >
               Explore the Documentation
               <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />

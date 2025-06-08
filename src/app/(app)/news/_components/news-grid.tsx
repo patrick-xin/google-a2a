@@ -16,10 +16,10 @@ export function NewsGrid({
   if (articles.length === 0) {
     return (
       <div className="text-center py-12">
-        <h3 className="text-lg font-medium text-gray-900 mb-2">
+        <h3 className="text-lg font-medium text-foreground mb-2">
           No articles found
         </h3>
-        <p className="text-gray-600">
+        <p className="text-muted-foreground">
           Try adjusting your filters or check back later.
         </p>
       </div>
@@ -30,10 +30,10 @@ export function NewsGrid({
     <div className="space-y-6">
       {/* Results header */}
       <div className="flex justify-between items-center">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-muted-foreground">
           Showing {articles.length} of {totalCount} articles
         </p>
-        <div className="text-sm text-gray-500">Page {currentPage}</div>
+        <div className="text-sm text-muted-foreground">Page {currentPage}</div>
       </div>
 
       {/* Articles grid */}
