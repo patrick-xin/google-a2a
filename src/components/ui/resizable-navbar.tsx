@@ -67,11 +67,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   });
 
   return (
-    <motion.div
-      ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("sticky inset-x-0 top-4 z-40 w-full", className)}
-    >
+    <motion.div ref={ref} className={cn(className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
@@ -93,7 +89,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
           ? "0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px hsl(var(--border) / 0.5), inset 0 1px 0 hsl(var(--background) / 0.8)"
           : "0 4px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px hsl(var(--border) / 0.2)",
         width: visible ? "42%" : "100%",
-        y: visible ? 16 : 0,
+
         scale: visible ? 0.98 : 1,
       }}
       transition={{
@@ -109,7 +105,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
           : "hsl(var(--background) / 0.5)",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl border border-border/40 px-6 py-3 lg:flex transition-colors duration-300",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl border border-border/40 px-6 py-1 lg:flex transition-colors duration-300",
         className
       )}
     >
