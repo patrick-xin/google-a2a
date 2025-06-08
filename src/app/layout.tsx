@@ -8,10 +8,10 @@ import { Viewport } from "next";
 import { Toaster } from "@/components/ui/sonner";
 export const metadata = createMetadata({
   title: {
-    template: "%s | Fumadocs",
-    default: "Fumadocs",
+    template: "%s | A2A",
+    default: "A2A",
   },
-  description: "The Next.js framework for building documentation sites",
+  description: "Google Agent2Agent (A2A) Protocol",
   metadataBase: baseUrl,
 });
 

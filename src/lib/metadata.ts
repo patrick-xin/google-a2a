@@ -6,9 +6,9 @@ export function createMetadata(override: Metadata): Metadata {
     openGraph: {
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      url: "https://fumadocs.dev",
+      url: "https://google-a2a.vercel.app",
       images: "/banner.png",
-      siteName: "Fumadocs",
+      siteName: "A2A",
       ...override.openGraph,
     },
     twitter: {
@@ -23,7 +23,7 @@ export function createMetadata(override: Metadata): Metadata {
       types: {
         "application/rss+xml": [
           {
-            title: "Fumadocs Blog",
+            title: "A2A Blog",
             url: "https://fumadocs.dev/blog/rss.xml",
           },
         ],
