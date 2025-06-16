@@ -1,4 +1,5 @@
 "use client";
+import { logo } from "@/app/layout.config";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
@@ -257,10 +258,10 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-3 px-3 py-2 text-sm font-semibold text-foreground rounded-xl hover:bg-accent/40 transition-colors duration-200"
     >
-      <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-        <span className="text-primary-foreground font-bold text-lg">S</span>
-      </div>
-      <span className="font-semibold text-foreground">Startup</span>
+      {logo}
+      <span className="font-semibold bg-gradient-to-tr from-purple-500 via-primary to-indigo-500 bg-clip-text text-transparent">
+        A2A Hub
+      </span>
     </Link>
   );
 };

@@ -78,6 +78,24 @@
   --chart-3: oklch(0.6 0.16 270);
   --chart-4: oklch(0.7 0.14 130);
   --chart-5: oklch(0.5 0.17 30);
+
+  /* Syntax highlighting */
+  --sh-class: oklch(0.79 0.12 214);
+  --sh-identifier: oklch(0.85 0.02 209);
+  --sh-sign: oklch(0.71 0.02 208);
+  --sh-property: oklch(0.77 0.14 183);
+  --sh-entity: oklch(0.77 0.15 156);
+  --sh-jsxliterals: oklch(0.74 0.13 235);
+  --sh-string: oklch(0.77 0.15 139);
+  --sh-keyword: oklch(0.74 0.13 235);
+  --sh-comment: oklch(0.67 0.02 208);
+  --sh-function: oklch(0.74 0.15 254);
+  --sh-number: oklch(0.77 0.15 169);
+  --sh-boolean: oklch(0.74 0.13 235);
+  --sh-variable: oklch(0.83 0.02 209);
+  --sh-constant: oklch(0.79 0.12 214);
+  --sh-operator: oklch(0.78 0.02 208);
+  --sh-regex: oklch(0.67 0.15 27);
 }
 
 .dark {
@@ -112,6 +130,24 @@
   --chart-3: oklch(0.68 0.13 270);
   --chart-4: oklch(0.75 0.11 130);
   --chart-5: oklch(0.6 0.14 30);
+
+  /* Syntax highlighting */
+  --sh-class: oklch(0.79 0.12 214);
+  --sh-identifier: oklch(0.85 0.02 209);
+  --sh-sign: oklch(0.71 0.02 208);
+  --sh-property: oklch(0.77 0.14 183);
+  --sh-entity: oklch(0.77 0.15 156);
+  --sh-jsxliterals: oklch(0.74 0.13 235);
+  --sh-string: oklch(0.77 0.15 139);
+  --sh-keyword: oklch(0.74 0.13 235);
+  --sh-comment: oklch(0.67 0.02 208);
+  --sh-function: oklch(0.74 0.15 254);
+  --sh-number: oklch(0.77 0.15 169);
+  --sh-boolean: oklch(0.74 0.13 235);
+  --sh-variable: oklch(0.83 0.02 209);
+  --sh-constant: oklch(0.79 0.12 214);
+  --sh-operator: oklch(0.78 0.02 208);
+  --sh-regex: oklch(0.67 0.15 27);
 }
 
 @layer base {

@@ -6,7 +6,7 @@ import A2AMCPSection from "@/components/landing/mcp";
 import A2AProblemSection from "@/components/landing/problem";
 import A2ATechnicalSection from "@/components/landing/technical";
 
-function Page() {
+async function Page() {
   return (
     <>
       <A2AHeroSection />

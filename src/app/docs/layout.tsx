@@ -1,14 +1,39 @@
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import type { ReactNode } from "react";
-import { baseOptions, linkItems } from "@/app/layout.config";
+import { baseOptions, logo } from "@/app/layout.config";
 import { source } from "@/lib/source";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Sparkles } from "lucide-react";
+import { AISearchTrigger } from "@/components/ai/search-trigger";
+import { LargeSearchToggle } from "fumadocs-ui/components/layout/search-toggle";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       {...baseOptions}
       tree={source.pageTree}
-      links={linkItems.filter((item) => item.type === "icon")}
+      searchToggle={{
+        components: {
+          lg: (
+            <div className="flex gap-1.5 max-md:hidden">
+              <LargeSearchToggle className="flex-1" />
+              <AISearchTrigger
+                aria-label="Ask AI"
+                className={cn(
+                  "mt-0.5",
+                  buttonVariants({
+                    variant: "secondary",
+                    size: "sm",
+                  })
+                )}
+              >
+                <Sparkles className="size-4 text-fd-primary fill-current" />
+              </AISearchTrigger>
+            </div>
+          ),
+        },
+      }}
       sidebar={{
         tabs: {
           transform(option, node) {
@@ -36,6 +61,33 @@ export default function Layout({ children }: { children: ReactNode }) {
             };
           },
         },
+      }}
+      nav={{
+        ...baseOptions.nav,
+
+        title: (
+          <>
+            {logo}
+            <span className="font-semibold [.uwu_&]:hidden max-md:hidden">
+              A2A Hub
+            </span>
+          </>
+        ),
+        children: (
+          <AISearchTrigger
+            className={cn(
+              buttonVariants({
+                variant: "secondary",
+                size: "sm",
+                className:
+                  "absolute left-1/2 top-1/2 -translate-1/2 text-fd-muted-foreground rounded-full gap-2 md:hidden",
+              })
+            )}
+          >
+            <Sparkles className="size-4.5 fill-current" />
+            Ask AI
+          </AISearchTrigger>
+        ),
       }}
     >
       {children}

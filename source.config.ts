@@ -35,11 +35,11 @@ export default defineConfig({
     rehypeCodeOptions: {
       lazy: true,
       experimentalJSEngine: true,
-      langs: ["ts", "js", "html", "tsx", "mdx"],
+      langs: ["ts", "js", "html", "tsx", "mdx", "python"],
       inline: "tailing-curly-colon",
       themes: {
-        light: "catppuccin-latte",
-        dark: "catppuccin-mocha",
+        light: "github-light-default",
+        dark: "github-dark-dimmed",
       },
       transformers: [
         ...(rehypeCodeDefaultOptions.transformers ?? []),

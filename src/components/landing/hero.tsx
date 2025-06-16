@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Network, Star, Users, Code, Play } from "lucide-react";
+import LandingVideo from "./video";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const A2AHeroSection = () => {
   const { scrollYProgress } = useScroll();
@@ -105,10 +108,9 @@ const A2AHeroSection = () => {
           <motion.p
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto"
+            className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto"
           >
             The open standard enabling seamless communication and collaboration
-            <br className="hidden md:block" />
             between AI agents across frameworks and vendors
           </motion.p>
 
@@ -118,23 +120,14 @@ const A2AHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-2 min-w-[200px] justify-center"
-            >
-              Get Started
-              <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-            </motion.button>
+            <Link href={"/docs"}>
+              <Button size={"lg"}>
+                Get Started
+                <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+              </Button>
+            </Link>
 
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group border border-border px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:bg-accent hover:border-accent-foreground/20 flex items-center gap-2 min-w-[200px] justify-center backdrop-blur-sm"
-            >
-              <Play className="w-5 h-5" />
-              Watch Demo
-            </motion.button>
+            <LandingVideo />
           </motion.div>
 
           {/* Quick Stats */}

@@ -12,8 +12,9 @@ export async function GET(
   const slug = (await params).slug;
   const page = source.getPage(slug);
   if (!page) notFound();
+  const result = await getLLMText(page);
 
-  return new NextResponse(await getLLMText(page));
+  return new NextResponse(result);
 }
 
 export function generateStaticParams() {

@@ -40,7 +40,7 @@ export function LLMCopyButton({ slug }: { slug: string[] }) {
   });
 
   return (
-    <Button disabled={isLoading} onClick={onClick}>
+    <Button size={"sm"} disabled={isLoading} onClick={onClick}>
       {checked ? (
         <CopyCheck className="size-3.5" />
       ) : (
