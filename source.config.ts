@@ -1,4 +1,5 @@
 import {
+  defineCollections,
   defineConfig,
   defineDocs,
   frontmatterSchema,
@@ -27,6 +28,16 @@ export const docs = defineDocs({
       description: z.string().optional(),
     }),
   },
+});
+
+export const blog = defineCollections({
+  type: "doc",
+  dir: "content/blog",
+  // async: true,
+  schema: frontmatterSchema.extend({
+    author: z.string(),
+    date: z.string().date().or(z.date()),
+  }),
 });
 
 export default defineConfig({

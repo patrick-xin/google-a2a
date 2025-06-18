@@ -13,6 +13,10 @@
     "---Protocol Specification---",
     "specification",
     "---Tutorial---",
-    "python"
+    "python",
+    "---SDK---",
+    "python-sdk",
+    "js-sdk",
+    "test"
   ]
 }
