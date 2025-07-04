@@ -14,7 +14,6 @@ export default async function Page(props: {
   if (!page) notFound();
 
   const { body: Mdx, toc, title, author, date, description } = await page.data;
-  console.log(page);
 
   // Subtle noise SVG for texture
   const noiseSvg = `<svg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
