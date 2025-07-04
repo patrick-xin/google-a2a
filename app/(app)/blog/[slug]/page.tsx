@@ -13,7 +13,8 @@ export default async function Page(props: {
   const page = blog.getPage([params.slug]);
   if (!page) notFound();
 
-  const { body: Mdx, toc } = await page.data;
+  const { body: Mdx, toc, title, author, date, description } = await page.data;
+  console.log(page);
 
   // Subtle noise SVG for texture
   const noiseSvg = `<svg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
@@ -48,17 +49,15 @@ export default async function Page(props: {
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent leading-tight">
-              {page.data.title}
+              {title}
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {page.data.description}
+              {description}
             </p>
             <div className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground">
-              <span>By {page.data.author}</span>
+              <span>By {author}</span>
               <span>•</span>
-              <span>
-                {new Date(page.data.date ?? page.file.name).toDateString()}
-              </span>
+              <span>{new Date(date ?? page.file.name).toDateString()}</span>
             </div>
           </div>
         </div>

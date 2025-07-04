@@ -28,6 +28,7 @@
     "fumadocs-core": "15.5.0",
     "fumadocs-docgen": "^2.0.0",
     "fumadocs-mdx": "11.6.6",
+    "fumadocs-python": "^0.0.3",
     "fumadocs-twoslash": "^3.1.3",
     "fumadocs-typescript": "^4.0.5",
     "fumadocs-ui": "15.5.0",
@@ -42,6 +43,7 @@
     "react-markdown": "^10.1.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
+    "shiki": "^3.6.0",
     "sonner": "^2.0.5",
     "sugar-high": "^0.9.3",
     "tailwind-merge": "^3.3.0"

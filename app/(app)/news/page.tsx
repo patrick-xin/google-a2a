@@ -1,38 +1,9 @@
 import { Suspense } from "react";
-import { unstable_cache as cache } from "next/cache";
-import { NewsGrid } from "./_components/news-grid";
-import { NewsFilters } from "./_components/news-filters";
 import { NewsSkeleton } from "./_components/news-skeleton";
-import { getAvailableDomains, getNewsFeed } from "@/services/news";
 import { notFound } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
-
-// Cache the news data for 5 minutes
-const getCachedNewsFeed = cache(
-  async (
-    page: number,
-    sort?: "relevance" | "recent" | "quality",
-    domain?: string
-  ) => {
-    return await getNewsFeed({ page, sort, domain });
-  },
-  ["news-feed"],
-  {
-    revalidate: 300, // 5 minutes
-    tags: ["news-feed"],
-  }
-);
-
-const getCachedDomains = cache(
-  async () => {
-    return await getAvailableDomains();
-  },
-  ["news-domains"],
-  {
-    revalidate: 3600, // 1 hour
-    tags: ["news-domains"],
-  }
-);
+import FiltersSection from "./_components/filter";
+import NewsSection from "./_components/news";
 
 // ✅ Improved: Better type safety for searchParams
 type SearchParams = {
@@ -79,70 +50,19 @@ export default async function NewsPage(props: NewsPageProps) {
           </p>
         </header>
 
-        {/* ✅ Improved: Better Suspense boundaries with fallback components */}
         <Suspense fallback={<FiltersSkeleton />}>
           <FiltersSection />
         </Suspense>
 
-        {/* ✅ Improved: More specific loading state */}
-        <Suspense fallback={<NewsSkeleton articleCount={12} />}>
+        <Suspense
+          key={page + sort + domain}
+          fallback={<NewsSkeleton articleCount={12} />}
+        >
           <NewsSection page={page} sort={sort} domain={domain} />
         </Suspense>
       </div>
     </div>
   );
-}
-
-// ✅ Improved: Error boundaries and better error handling
-async function FiltersSection() {
-  try {
-    const domains = await getCachedDomains();
-    return <NewsFilters availableDomains={domains} />;
-  } catch (error) {
-    console.error("Failed to load domains:", error);
-    // ✅ Graceful fallback
-    return <NewsFilters availableDomains={[]} />;
-  }
-}
-
-// ✅ Improved: Better error handling and type safety
-async function NewsSection({
-  page,
-  sort,
-  domain,
-}: {
-  page: number;
-  sort: "relevance" | "recent" | "quality";
-  domain?: string;
-}) {
-  try {
-    const newsData = await getCachedNewsFeed(page, sort, domain);
-
-    // ✅ Handle empty results
-    if (!newsData || newsData.articles.length === 0) {
-      return (
-        <div className="text-center py-12">
-          <h3 className="text-lg font-medium mb-2">No articles found</h3>
-          <p className="text-muted-foreground">
-            Try adjusting your filters or check back later.
-          </p>
-        </div>
-      );
-    }
-
-    return <NewsGrid {...newsData} currentPage={page} />;
-  } catch {
-    return (
-      <div className="text-center py-12">
-        <h3 className="text-lg font-medium text-red-600 mb-2">
-          Failed to load news
-        </h3>
-        <p className="text-muted-foreground">
-          Please try refreshing the page or check back later.
-        </p>
-      </div>
-    );
-  }
 }
 
 // ✅ New: Dedicated loading component for filters

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
 import { AISearchTrigger } from "@/components/ai/search-trigger";
 import { LargeSearchToggle } from "fumadocs-ui/components/layout/search-toggle";
+import { Footer } from "@/components/footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -91,6 +92,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
     >
       {children}
+      <Footer />
     </DocsLayout>
   );
 }

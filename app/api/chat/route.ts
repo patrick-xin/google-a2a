@@ -1,4 +1,4 @@
-import { completionModel, searchForAgent } from "@/lib/ai";
+import { chatModel, searchForAgent } from "@/lib/ai";
 import { streamText, tool } from "ai";
 import { z } from "zod";
 
@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: completionModel,
+    model: chatModel,
     system: `You are a helpful assistant. Check your knowledge base before answering any questions.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,

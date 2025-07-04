@@ -31,7 +31,7 @@ function Header() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <header className="sticky inset-x-0 top-4 z-40 w-full">
+    <header className="sticky inset-x-0 top-4 z-40 w-full max-w-5xl mx-auto">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>

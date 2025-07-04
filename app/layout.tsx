@@ -35,6 +35,8 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
     { media: "(prefers-color-scheme: light)", color: "#fff" },
   ],
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function Layout({ children }: { children: ReactNode }) {

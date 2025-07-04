@@ -19,12 +19,11 @@ interface NewsFiltersProps {
 export function NewsFilters({ availableDomains }: NewsFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [isPending, startTransition] = useTransition(); // ✅ Better loading states
+  const [isPending, startTransition] = useTransition();
 
   const currentSort = searchParams.get("sort") || "relevance";
   const currentDomain = searchParams.get("domain") || "all";
 
-  // ✅ Improved: Memoize the update function
   const updateFilter = useCallback(
     (key: string, value: string) => {
       startTransition(() => {
@@ -38,7 +37,6 @@ export function NewsFilters({ availableDomains }: NewsFiltersProps) {
 
         params.delete("page"); // Reset to page 1 when filtering
 
-        // ✅ Improved: Use replace for filter changes to avoid cluttering history
         const newUrl = params.toString()
           ? `/news?${params.toString()}`
           : "/news";
@@ -49,19 +47,16 @@ export function NewsFilters({ availableDomains }: NewsFiltersProps) {
   );
 
   return (
-    <div className="rounded-lg p-4 mb-6 border bg-card">
+    <div className="py-4 mb-6">
       <div className="flex flex-wrap gap-4 items-center">
         <div className="flex items-center gap-2">
-          <Label
-            className="text-sm font-medium"
-            htmlFor="sort-select" // ✅ Better accessibility
-          >
+          <Label className="text-sm font-medium" htmlFor="sort-select">
             Sort by:
           </Label>
           <Select
             value={currentSort}
             onValueChange={(value) => updateFilter("sort", value)}
-            disabled={isPending} // ✅ Disable during transitions
+            disabled={isPending}
           >
             <SelectTrigger
               className="w-32"
@@ -79,16 +74,13 @@ export function NewsFilters({ availableDomains }: NewsFiltersProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Label
-            className="text-sm font-medium"
-            htmlFor="domain-select" // ✅ Better accessibility
-          >
+          <Label className="text-sm font-medium" htmlFor="domain-select">
             Source:
           </Label>
           <Select
             value={currentDomain}
             onValueChange={(value) => updateFilter("domain", value)}
-            disabled={isPending} // ✅ Disable during transitions
+            disabled={isPending}
           >
             <SelectTrigger
               className="w-48"

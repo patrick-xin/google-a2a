@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-import { NavbarLogo } from "./ui/resizable-navbar";
 import { ThemeToggle } from "./theme-toggle";
 import { Logo } from "./logo";
 

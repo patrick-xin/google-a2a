@@ -1,6 +1,7 @@
 ---
 title: Agent2Agent (A2A) Protocol
 ---
+import { HomeIcon } from 'lucide-react';
 
 ![A2A Banner](https://google-a2a.github.io/A2A/assets/a2a-banner.png)
 
@@ -53,11 +54,20 @@ A2A and the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) are
 
 ### Get Started with A2A
 
-<CustomLink 
-  href="/docs/getting-started" 
-  title="Getting Started Guide" 
-  icon="Book" 
-/>
+
+
+<Cards>
+  <Card
+    href="https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating"
+    title="Fetching, Caching, and Revalidating"
+  >
+    Learn more about caching in Next.js
+  </Card>
+  <Card title="href is optional">Learn more about `fetch` in Next.js.</Card>
+  <Card icon={<HomeIcon />} href="/" title="Home">
+    You can include icons too.
+  </Card>
+</Cards>
 
 
 - **Read the Introduction**
